@@ -1,0 +1,21 @@
+Krovex public Microsoft sign-in
+
+Register Krovex once in your Microsoft Entra directory. The registration
+must support personal Microsoft accounts. Add a Mobile and desktop
+applications redirect URI of http://localhost/callback and enable public
+client flows. Also follow Mojang’s Java Edition Game Service API review
+process for third-party applications.
+
+The developer builds a public release with the Krovex application ID:
+
+    .\Build-PublicRelease.ps1 -OriginalJar 'C:\path\to\original-Krovex.jar' -OutputJar 'C:\path\to\Krovex-Launcher.jar' -MicrosoftClientId '<Krovex Application (client) ID>'
+
+Ship the resulting launcher. Players click Sign in with Microsoft and
+choose their account in the browser. The application ID is a public
+identifier. This desktop flow uses PKCE and requires no client secret.
+
+Microsoft desktop registration:
+https://learn.microsoft.com/entra/identity-platform/scenario-desktop-app-registration
+
+Mojang API review:
+https://help.minecraft.net/hc/en-us/articles/16254801392141

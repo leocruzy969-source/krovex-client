@@ -1,0 +1,6 @@
+# build output and caches (recreated by gradle)
+.gradle/
+build/
+mod/build/
+mod/.gradle/
+*.class

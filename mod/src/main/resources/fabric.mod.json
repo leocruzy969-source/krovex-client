@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "id": "krovex-client",
+  "version": "${version}",
+  "name": "Krovex Client",
+  "description": "In-game interface, modules, HUD editor, and themes for Krovex Client. Works standalone in any Fabric-compatible launcher -- no Krovex Launcher or account required.",
+  "authors": ["Krovex"],
+  "contact": {},
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.krovex.client.KrovexClientMod", "com.krovex.client.gui.PauseMenuRegistration"]
+  },
+  "mixins": ["krovex-client.mixins.json"],
+  "depends": {
+    "fabricloader": ">=0.19.0",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "java": ">=21"
+  }
+}

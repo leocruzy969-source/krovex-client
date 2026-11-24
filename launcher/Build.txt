@@ -1,0 +1,19 @@
+Krovex Launcher UI source overlay
+
+These Java sources update the supplied Krovex Launcher build. Keep a copy
+of the original launcher JAR. Its account, launch, and modpack backends
+are required to compile and run these changes.
+
+From this folder in PowerShell with JDK 21, set the paths to your input
+JAR and your new output JAR, then run:
+
+    $original = 'C:\path\to\original-launcher.jar'
+    $output = 'C:\path\to\redesigned-launcher.jar'
+    New-Item -ItemType Directory -Force classes | Out-Null
+    $sources = Get-ChildItem com -Recurse -Filter '*.java' | ForEach-Object FullName
+    javac -encoding UTF-8 -cp $original -d classes $sources
+    if ($LASTEXITCODE -ne 0) { throw 'Java compilation failed.' }
+    Copy-Item -LiteralPath $original -Destination $output
+    jar --update --file $output -C classes . -C . assets
+    java -jar $output
+

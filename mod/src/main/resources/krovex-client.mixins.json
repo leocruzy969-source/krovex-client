@@ -1,0 +1,25 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.krovex.client.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "KrovexMouseMixin",
+    "KrovexParticleMixin",
+    "KrovexSkyMixin",
+    "KrovexCloudMixin",
+    "KrovexFogMixin",
+    "KrovexHeldItemMixin",
+    "KrovexClearTextureMixin",
+    "KrovexClearInventoryMixin",
+    "KrovexMotionMixin",
+    "KrovexPortalMixin",
+    "KrovexWeatherSoundMixin",
+    "KrovexBackgroundFpsMixin",
+    "KrovexHudAlphaMixin",
+    "KrovexPuddleMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
